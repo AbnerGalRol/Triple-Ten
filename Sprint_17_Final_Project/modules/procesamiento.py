@@ -32,7 +32,7 @@ def procesamiento(contract,personal,internet,phone):
 
     # Usamos el método OHE para codificar nuestras columnas categóricas.
     ohe_columns = final_df.drop(columns=['customerid','begindate','seniorcitizen','monthlycharges','totalcharges']).columns
-    final_df_ohe = pd.get_dummies(final_df,columns=ohe_columns,drop_first=True)
+    final_df_ohe = pd.get_dummies(final_df,columns=ohe_columns,drop_first=True,dtype=int)
 
     # Creamos una semilla
     random_state = 12345
